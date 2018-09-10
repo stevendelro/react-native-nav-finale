@@ -8,13 +8,12 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
-  const { prop, value } = payload;
 
   switch (type) {
     case EDIT_EMPLOYEE:
       return {
         ...state,
-        [prop]: value
+        [payload.prop]: payload.value
       };
     default:
       return state;
