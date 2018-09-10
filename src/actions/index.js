@@ -31,15 +31,14 @@ export const loginUser = ({ email, password }) => {
           .auth()
           .createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
-          .catch(error => loginUserFailed(dispatch, error));
+          .catch(() => loginUserFailed(dispatch));
       });
   };
 };
 
-const loginUserFailed = (dispatch, error) => {
-  dispatch({ 
-    type: LOGIN_USER_FAILED,
-    payload: error
+const loginUserFailed = dispatch => {
+  dispatch({
+    type: LOGIN_USER_FAILED
   });
 };
 
