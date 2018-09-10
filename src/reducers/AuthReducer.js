@@ -15,14 +15,14 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
-  console.log('INSIDE REDUCER: ', action);
+  
   switch (type) {
     case EMAIL_CHANGED:
       return { ...state, email: payload };
     case PASSWORD_CHANGED:
       return { ...state, password: payload };
     case LOGIN_USER_SUCCESS:
-      return { ...state, user: payload };
+      return { ...state, user: payload, error: '' };
     case LOGIN_USER_FAILED:
       return { ...state, error: 'Authentication Failed!', password: '' };
     default:
