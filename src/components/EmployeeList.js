@@ -23,10 +23,10 @@ class EmployeeList extends Component {
     return <ListItem employee={employee} />;
   }
   render() {
-    console.log('crazy shit yo: ', this.props);
     return (
-      <ListView 
-        enableEmptySectionsdataSource={this.dataSource}
+      <ListView
+        enableEmptySections={true}
+        dataSource={this.dataSource}
         renderRow={this.renderRow}
       />
     );
