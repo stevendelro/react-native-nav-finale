@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import EmployeeForm from './EmployeeForm';
 import { editEmployee, saveEmployee } from '../actions';
-import { Card, CardSection, Button } from '../common';
+import { Card, CardSection, Button, Confirm } from '../common';
 
 class EditEmployee extends Component {
+  state = { showModal: false };
+
   componentWillMount() {
     each(this.props.employee, (value, prop) => {
       this.props.editEmployee({ prop, value });
@@ -27,7 +29,7 @@ class EditEmployee extends Component {
     const { name, phone, shift } = this.props;
     Communications.text(
       phone,
-      `Hey ${name}! I have you scheduled to come in on ${shift}. Let me know if you have any questions! Thanks!`
+      `Hey ${name}! I have you scheduled to come in on ${shift}. Thanks!`
     );
   }
 
@@ -41,6 +43,20 @@ class EditEmployee extends Component {
         <CardSection>
           <Button onPress={this.textSchedule.bind(this)}>Text Schedule</Button>
         </CardSection>
+        <CardSection>
+          <Button
+            onPress={() =>
+              this.setState({
+                showModal: !this.state.showModal
+              })
+            }
+          >
+            Fire Employee
+          </Button>
+        </CardSection>
+        <Confirm visible={this.state.showModal}>
+          Are you sure you want to proceed?
+        </Confirm>
       </Card>
     );
   }
