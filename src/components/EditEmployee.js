@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import EmployeeForm from './EmployeeForm';
-import { editEmployee, saveEmployee } from '../actions';
+import { editEmployee, saveEmployee, removeEmployee } from '../actions';
 import { Card, CardSection, Button, Confirm } from '../common';
 
 class EditEmployee extends Component {
@@ -25,6 +25,16 @@ class EditEmployee extends Component {
     });
   }
 
+  onAccept() {
+    this.props.removeEmployee({ uid: this.props.employee.uid });
+  }
+
+  onDecline() {
+    this.setState({
+      showModal: false
+    });
+  }
+
   textSchedule() {
     const { name, phone, shift } = this.props;
     Communications.text(
@@ -32,7 +42,6 @@ class EditEmployee extends Component {
       `Hey ${name}! I have you scheduled to come in on ${shift}. Thanks!`
     );
   }
-
   render() {
     return (
       <Card>
@@ -54,7 +63,11 @@ class EditEmployee extends Component {
             Fire Employee
           </Button>
         </CardSection>
-        <Confirm visible={this.state.showModal}>
+        <Confirm
+          visible={this.state.showModal}
+          onAccept={this.onAccept.bind(this)}
+          onDecline={this.onDecline.bind(this)}
+        >
           Are you sure you want to proceed?
         </Confirm>
       </Card>
@@ -69,5 +82,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { editEmployee, saveEmployee }
+  { editEmployee, saveEmployee, removeEmployee }
 )(EditEmployee);
