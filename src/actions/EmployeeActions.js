@@ -3,7 +3,8 @@ import { Actions } from 'react-native-router-flux';
 import {
   EDIT_EMPLOYEE,
   ADD_NEW_EMPLOYEE,
-  FETCH_EMPLOYEES_SUCCESS
+  FETCH_EMPLOYEES_SUCCESS,
+  SAVE_EMPLOYEES_SUCCESS
 } from './types';
 
 export const editEmployee = ({ prop, value }) => {
@@ -49,6 +50,11 @@ export const saveEmployee = ({ name, phone, shift, uid }) => {
       .database()
       .ref(`/users/${currentUser.uid}/employees/${uid}`)
       .set({ name, phone, shift })
-      .then(() => console.log('saved!'));
-  }
-}
+      .then(() => {
+        dispatch({
+          type: SAVE_EMPLOYEES_SUCCESS
+        });
+        Actions.employeeList();
+      });
+  };
+};
