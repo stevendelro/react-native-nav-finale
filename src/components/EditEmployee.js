@@ -2,7 +2,7 @@ import each from 'lodash/each';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EmployeeForm from './EmployeeForm';
-import { editEmployee } from '../actions';
+import { editEmployee, saveEmployee } from '../actions';
 import { Card, CardSection, Button } from '../common';
 
 class EditEmployee extends Component {
@@ -14,7 +14,12 @@ class EditEmployee extends Component {
 
   onButtonPress() {
     const { name, phone, shift } = this.props;
-    console.log('EDITEMPLOYEE:', name, phone, shift);
+    this.props.saveEmployee({
+      name,
+      phone,
+      shift,
+      uid: this.props.employee.uid
+    });
   }
 
   render() {
@@ -36,5 +41,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { editEmployee }
+  { editEmployee, saveEmployee }
 )(EditEmployee);

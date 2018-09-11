@@ -41,3 +41,14 @@ export const employeesFetch = () => {
       });
   };
 };
+
+export const saveEmployee = ({ name, phone, shift, uid }) => {
+  const { currentUser } = firebase.auth();
+  return dispatch => {
+    firebase
+      .database()
+      .ref(`/users/${currentUser.uid}/employees/${uid}`)
+      .set({ name, phone, shift })
+      .then(() => console.log('saved!'));
+  }
+}
