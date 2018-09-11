@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Picker, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { EditEmployee } from '../actions';
+import { editEmployee, addNewEmployee } from '../actions';
 import { Card, CardSection, Input, Button } from '../common';
 
 class AddEmployee extends Component {
+  onButtonPress() {
+    const { name, phone, shift } = this.props;
+    this.props.addNewEmployee({ name, phone, shift: shift || 'Monday' });
+  }
+
   render() {
     const { name, phone } = this.props;
     return (
@@ -14,8 +19,8 @@ class AddEmployee extends Component {
             label="Name"
             placeholder="Jane"
             value={name}
-            onChange={employeeName =>
-              this.props.EditEmployee({
+            onChangeText={employeeName =>
+              this.props.editEmployee({
                 prop: 'name',
                 value: employeeName
               })
@@ -28,8 +33,8 @@ class AddEmployee extends Component {
             label="Phone"
             placeholder="012-345-6789"
             value={phone}
-            onChange={phoneNumber =>
-              this.props.EditEmployee({
+            onChangeText={phoneNumber =>
+              this.props.editEmployee({
                 prop: 'phone',
                 value: phoneNumber
               })
@@ -42,7 +47,7 @@ class AddEmployee extends Component {
           <Picker
             selectedValue={this.props.shift}
             onValueChange={day =>
-              this.props.EditEmployee({
+              this.props.editEmployee({
                 prop: 'shift',
                 value: day
               })
@@ -58,7 +63,7 @@ class AddEmployee extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>Add</Button>
+          <Button onPress={this.onButtonPress.bind(this)}>Add</Button>
         </CardSection>
       </Card>
     );
@@ -79,5 +84,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { EditEmployee }
+  { editEmployee, addNewEmployee }
 )(AddEmployee);
