@@ -114,5 +114,3 @@ This is no longer about aptitude, because I have that in spades. This is about d
 4. [Server Side Rendering with React and Redux](https://www.udemy.com/server-side-rendering-with-react-and-redux/?couponCode=RCODING)
 5. [The Coding Interview Bootcamp: Algorithms + Data Structures](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure/?couponCode=4more1234)
 6. [Node JS: Advanced Concepts](https://www.udemy.com/advanced-node-for-developers/?couponCode=RCODING)
-
-
