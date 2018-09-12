@@ -83,7 +83,7 @@ That's about it!
 #### Learning from this:
 
 * This is something that I should simply expect in my fore-coming professional life: I should expect to have bombs of unfamiliar syntax dropped on me, and having to be able to figure it all out with minimal help. 
-* Touché Grider, touché.*
+* Touché Grider, *touché.*
 
 #### Big decisions:
 
