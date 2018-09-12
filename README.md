@@ -96,7 +96,7 @@ Thats about it!
 
 Awesome course, but it is a bit outdated and with it's own issues towards the latter half. Regardless, I learned a lot and I'm going to keep the momentum going with more and more projects. I'm a bit interested in the Flutter ecosystem, but I think I'll stick to mastering my Javascript Stack for now.
 
-I checked out [Grider's website site](https://https://www.rallycoding.com/) and he's got a few interesting learning paths for the courses he's made. In no way am I affiliated with him, but for the sake of having a consistent teacher, with consistent course structure and teaching style, I plan to continue doing his courses. 
+I checked out [Grider's website](https://https://www.rallycoding.com/) and he's got a few interesting learning paths for the courses he's made. In no way am I affiliated with him, but for the sake of having a consistent teacher, with consistent course structure and teaching style, I plan to continue doing his courses. 
 
 I'm kind of banking my entire life on getting really good and landing a developer job before I run out of money. With the momentum that I've built with this course, I'll demolish the next few courses as I slowly ramp up my coding to 10+ hour days. 
 
