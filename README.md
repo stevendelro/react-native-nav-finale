@@ -6,7 +6,9 @@ Built while following along: [The Complete React Native and Redux Course](https:
 
 The completed app is a *super simplified* employee schedule notifier. 
 
-Theoretically, if this app was refined over a few more days, a manager of a small company would be able to create an account, add their employees, their phone numbers, and assign a day of the week each employee is assigned to come in. They would also be able to send a text to each employee in order to notify them of what day to come in.
+Theoretically, if this app was refined over a few more days, a manager of a small company would be able to create an account, add their employees, their phone numbers, and assign a day of the week each employee is assigned to come in. 
+
+They would also be able to send a text to each employee in order to notify them of what day to come in.
 
 ### A walkthough of the app:
 
