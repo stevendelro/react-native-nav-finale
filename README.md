@@ -13,16 +13,16 @@ They would also be able to send a text to each employee in order to notify them 
 ### A walkthough of the app:
 
 1. The user is presented with a login screen with **Email** and **Password** input boxes, along with a **Login** button.
-    * If they don't have an account, that's fine, they would still use the same login screen to create an account.
-    * If a mistake was made, an error will be presented to notify the user.
-    * Once an account is made, that user's employee information would only be accessable *by that user and that user alone*.
-    * A loading spinner will replace the Login button as the app communicates with Firebase.
+  * If they don't have an account, that's fine, they would still use the same login screen to create an account.
+  * If a mistake was made, an error will be presented to notify the user.
+  * Once an account is made, that user's employee information would only be accessable *by that user and that user alone*.
+  * A loading spinner will replace the Login button as the app communicates with Firebase.
     
 2. The user is then routed to an **Employees** screen with a simple header and an **Add** button to the right of the header title.
-    * The routing from the authentication screen to the employee list screen is one-way.
+  * The routing from the authentication screen to the employee list screen is one-way.
     
 3. When the user taps the **Add** button, they're routed to an **Add Employee** screen.
-    * The Add Employee header has a back button to the left of the header title that'll give the user the ability to go back to the Employee List screen at-will.
+  * The Add Employee header has a back button to the left of the header title that'll give the user the ability to go back to the Employee List screen at-will.
     
 4. The **Add Employee** screen is a basic card with four card sections:
     1. A **Name** text input.
@@ -31,8 +31,8 @@ They would also be able to send a text to each employee in order to notify them 
     4. An **Add** button.
 
 5. The user will then fill out the card, hit **Add**, and then automatically routed back to the Employee List screen.
-    * At this point, the **Add Employee** screen is wiped clean of the user input.
-    * The **Employee List** screen will now have a list item present, containing the employee's name.
+  * At this point, the **Add Employee** screen is wiped clean of the user input.
+  * The **Employee List** screen will now have a list item present, containing the employee's name.
     
 6. The user could either **Add** another employee and repeat the process, or they could tap on an employee's **Name**.
 7. If the user taps an employee's name, they'll be routed to the **Edit Employee** screen, which looks similar to the **Add Employee** screen, *but with three different buttons below the Shift picker*:
@@ -83,7 +83,7 @@ That's about it!
 #### Learning from this:
 
 * This is something that I should simply expect in my fore-coming professional life: I should expect to have bombs of unfamiliar syntax dropped on me, and having to be able to figure it all out with minimal help. 
-* *Touché Grider, touché.*
+* Touché Grider, touché.*
 
 #### Big decisions:
 
