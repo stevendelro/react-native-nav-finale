@@ -52,7 +52,7 @@ They would also be able to send a text to each employee in order to notify them 
     * Tapping **Yes** will remove the employee from the database and bring the user back to the **Employee List** screen.
     * Tapping **No** will allow the modal to slide out of the way, alowing the user access back to the **Edit Employee** screen.
     
-Thats about it!
+That's about it!
 
 ## Here's a few notes that I've taken mid-project.
 
